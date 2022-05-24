@@ -5,6 +5,18 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.6.21' apply false
 }
 
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+
+        // e.g this is how you would add jitpack
+        maven { url "https://jitpack.io" }
+        // Add any repositories you would be adding to all projects here
+    }
+}
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
