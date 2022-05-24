@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".InicioSesionLogin"
+            android:exported="false" />
+        <activity
             android:name=".Alertas"
             android:exported="false" />
         <activity

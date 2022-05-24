@@ -5,15 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class InicioSesion : AppCompatActivity() {
+class InicioSesionLogin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_inicio_sesion_login)
 
-        val btn: Button = findViewById(R.id.comienza)
+        val btn: Button = findViewById(R.id.login)
         btn.setOnClickListener{
 
-            val intent:Intent = Intent(this, InicioSesionLogin:: class.java)
+            val intent: Intent = Intent(this, Home:: class.java)
             startActivity(intent)
         }
     }
