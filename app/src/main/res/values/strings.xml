@@ -23,4 +23,8 @@
     <string name="todo">TODO</string>
     <string name="logo">WATC</string>
     <string name="bienvenidos">Bienvenido</string>
+    <string name="enviarmensaje">Enviar mensaje</string>
+    <string name="enviar">Enviar</string>
+
+
 </resources>

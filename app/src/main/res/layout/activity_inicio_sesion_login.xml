@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="32dp"
         android:background="#0000"
         android:text="Entrar como seguridad"

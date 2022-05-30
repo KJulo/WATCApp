@@ -15,5 +15,32 @@ class Alertas : AppCompatActivity() {
             val intent: Intent = Intent(this, Home::class.java)
             startActivity(intent)
         }
+        val btnViolenciaFisica: Button = findViewById(R.id.violenciaFisica)
+        btnViolenciaFisica.setOnClickListener {
+            val intent: Intent = Intent(this, enviarAlerta::class.java)
+            startActivity(intent)
+        }
+
+        val btnViolenciaGenero: Button = findViewById(R.id.violenciaGenero)
+        btnViolenciaGenero.setOnClickListener {
+            val intent: Intent = Intent(this, enviarAlerta::class.java)
+            startActivity(intent)
+        }
+        val btnOtro: Button = findViewById(R.id.button_otro)
+        btnOtro.setOnClickListener {
+            val intent: Intent = Intent(this, enviarAlerta::class.java)
+            startActivity(intent)
+        }
+        val btnRacismo: Button = findViewById(R.id.racismo)
+        btnRacismo.setOnClickListener {
+            val intent: Intent = Intent(this, enviarAlerta::class.java)
+            startActivity(intent)
+        }
+        val btnInclusion: Button = findViewById(R.id.inclusion)
+        btnInclusion.setOnClickListener {
+            val intent: Intent = Intent(this, enviarAlerta::class.java)
+            startActivity(intent)
+        }
+
     }
 }

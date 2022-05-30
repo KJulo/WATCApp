@@ -16,10 +16,10 @@
         android:text="@string/g_nero"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_genero" />
+        app:layout_constraintTop_toBottomOf="@+id/violenciaGenero" />
 
     <Button
-        android:id="@+id/button_genero"
+        android:id="@+id/violenciaGenero"
         android:layout_width="105dp"
         android:layout_height="114dp"
         android:layout_marginStart="200dp"
@@ -41,13 +41,14 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/button_genero2"
+        android:id="@+id/button_otro"
         android:layout_width="105dp"
         android:layout_height="114dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="230dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="470dp"
+        android:background="@drawable/ic_otro"
         android:backgroundTint="#FFFFFF"
         app:cornerRadius="38dp"
         app:icon="@drawable/ic_genero"
@@ -62,7 +63,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/button_racismo"
+        android:id="@+id/racismo"
         android:layout_width="105dp"
         android:layout_height="114dp"
         android:layout_marginStart="32dp"
@@ -81,7 +82,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/button_pelea"
+        android:id="@+id/violenciaFisica"
         android:layout_width="105dp"
         android:layout_height="114dp"
         android:layout_marginStart="32dp"
@@ -96,25 +97,25 @@
         app:iconSize="75dp"
         app:iconTint="#060606"
         app:layout_constraintBottom_toTopOf="@+id/pelea"
-        app:layout_constraintEnd_toStartOf="@+id/button_genero"
+        app:layout_constraintEnd_toStartOf="@+id/violenciaGenero"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
-        android:id="@+id/button_otro"
+        android:id="@+id/inclusion"
         android:layout_width="105dp"
         android:layout_height="114dp"
         android:layout_marginStart="260dp"
         android:layout_marginTop="57dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/ic_otro"
+        android:background="@drawable/ic_inclusion"
 
         android:backgroundTint="#FFFFFF"
         app:cornerRadius="38dp"
-        app:icon="@drawable/ic_otro"
+        app:icon="@drawable/ic_inclusion"
         app:iconSize="75dp"
         app:iconTint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -137,7 +138,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_otro" />
+        app:layout_constraintTop_toBottomOf="@+id/inclusion" />
 
     <TextView
         android:id="@+id/pelea"
@@ -151,22 +152,24 @@
         app:layout_constraintEnd_toStartOf="@+id/genero"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_pelea" />
+        app:layout_constraintTop_toBottomOf="@+id/violenciaFisica" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="208dp"
         android:text="@string/otro"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/button_second"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_genero2" />
+        app:layout_constraintTop_toBottomOf="@+id/button_otro"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView3"
@@ -179,7 +182,7 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_racismo" />
+        app:layout_constraintTop_toBottomOf="@+id/racismo" />
 
     <TextView
         android:id="@+id/textView4"
@@ -192,6 +195,6 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_otro" />
+        app:layout_constraintTop_toBottomOf="@+id/inclusion" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

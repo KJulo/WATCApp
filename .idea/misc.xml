@@ -3,21 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/KJulo/Documents/watcapp/WATCApp/app/src/main/res/layout/activity_admin_home.xml" value="0.14166666666666666" />
-        <entry key="..\:/Users/KJulo/Documents/watcapp/WATCApp/app/src/main/res/layout/activity_alertas.xml" value="0.1" />
-        <entry key="..\:/Users/KJulo/Documents/watcapp/WATCApp/app/src/main/res/layout/activity_home.xml" value="0.2674772036474164" />
-        <entry key="..\:/Users/KJulo/Documents/watcapp/WATCApp/app/src/main/res/layout/activity_home_admin.xml" value="0.25" />
-        <entry key="..\:/Users/KJulo/Documents/watcapp/WATCApp/app/src/main/res/layout/activity_inicio_sesion_login.xml" value="0.33" />
-        <entry key="..\:/Users/KJulo/Documents/watcapp/WATCApp/app/src/main/res/layout/activity_login_admin.xml" value="0.25" />
-        <entry key="..\:/Users/KJulo/Documents/watcapp/WATCApp/app/src/main/res/layout/activity_main.xml" value="0.14074074074074075" />
+        <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/drawable-anydpi/ic_perfil.xml" value="0.1835" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/drawable/button_rounded.xml" value="0.2445" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/drawable/button_rounded_border.xml" value="0.2445" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/drawable/email_contrasena.xml" value="0.2445" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2445" />
+        <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1835" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/drawable/watc_logo.xml" value="0.2445" />
-        <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/activity_alertas.xml" value="0.264" />
+        <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/activity_alertas.xml" value="0.25" />
+        <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/activity_enviar_alerta.xml" value="0.176" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/activity_home.xml" value="0.264" />
-        <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/activity_inicio_sesion_login.xml" value="0.1" />
+        <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/activity_home_admin.xml" value="0.128" />
+        <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/activity_inicio_sesion_login.xml" value="0.2" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/activity_inicio_watc.xml" value="0.264" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/card_layout.xml" value="0.1188118811881188" />

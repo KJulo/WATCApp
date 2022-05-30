@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".enviarAlerta"
+            android:exported="false" />
+        <activity
             android:name=".InicioSesionLogin"
             android:exported="false" />
         <activity
@@ -21,7 +24,8 @@
         <activity
             android:name=".InicioWatc"
             android:exported="false" />
-        <activity android:name=".HomeAdmin"
+        <activity
+            android:name=".HomeAdmin"
             android:exported="false" />
         <activity
             android:name=".InicioSesionAdmin"
@@ -31,6 +35,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
