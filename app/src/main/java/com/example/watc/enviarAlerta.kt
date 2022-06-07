@@ -18,7 +18,7 @@ class enviarAlerta : AppCompatActivity() {
               startActivity(intent)
 
 
-              val toast = Toast.makeText(this, "La alerta a sido resivida, enviaremos un guardia al sector del problema", Toast.LENGTH_LONG)
+              val toast = Toast.makeText(this, "La alerta ha sido recibida, enviaremos un guardia al sector del problema", Toast.LENGTH_LONG)
               toast.show()
 
           }
