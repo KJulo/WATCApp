@@ -14,6 +14,7 @@ class InicioSesion : AppCompatActivity() {
         btn.setOnClickListener{
 
             val intent:Intent = Intent(this, InicioSesionLogin:: class.java)
+
             startActivity(intent)
         }
     }
