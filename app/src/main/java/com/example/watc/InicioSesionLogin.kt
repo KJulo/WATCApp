@@ -17,6 +17,7 @@ class InicioSesionLogin : AppCompatActivity() {
 
 
         val btn: Button = findViewById(R.id.login)
+        val btnRegistrars: Button = findViewById(R.id.button2)
         val btnAdmin: Button = findViewById(R.id.button1)
 
         btn.setOnClickListener{
@@ -24,6 +25,11 @@ class InicioSesionLogin : AppCompatActivity() {
             intent.putExtra("Email",Email.text.toString())
             intent.putExtra("Contrasena",Password.text.toString())
             startActivity(intent)
+        }
+
+        btnRegistrars.setOnClickListener{
+            val intent: Intent = Intent(this, Registro:: class.java)
+            startActivity(intent);
         }
 
         btnAdmin.setOnClickListener{
