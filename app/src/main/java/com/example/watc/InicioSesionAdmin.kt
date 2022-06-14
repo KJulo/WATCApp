@@ -19,8 +19,12 @@ class InicioSesionAdmin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_admin)
 
+        val Email =findViewById<EditText>(R.id.editTextTextPersonName2)
+        val Password =findViewById<EditText>(R.id.editTextTextPassword2)
+
         val btn: Button = findViewById(R.id.volver)
         val btnLogin: Button = findViewById(R.id.login)
+
 
         btnLogin.setOnClickListener {
             val email: EditText = findViewById(R.id.editTextTextPersonName2)
@@ -28,6 +32,13 @@ class InicioSesionAdmin : AppCompatActivity() {
             var textEmail = email.text
             var textContrasena = contrasena.text
             checkAdmin(textEmail,textContrasena)
+
+  /*      btnLogin.setOnClickListener{
+            val intent: Intent = Intent(this, HomeAdmin:: class.java)
+            intent.putExtra("Email",Email.text.toString())
+            intent.putExtra("Contrasena",Password.text.toString())
+            startActivity(intent);*/
+
         }
 
         btn.setOnClickListener {
