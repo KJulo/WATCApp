@@ -43,16 +43,40 @@ class Home : AppCompatActivity() {
             toast.show()
         }
 
-        val andes: Button = findViewById(R.id.andes)
-        andes.setOnClickListener {
+        val andesA: Button = findViewById(R.id.andesA)
+        andesA.setOnClickListener {
             val intent: Intent = Intent(this, Home::class.java)
             startActivity(intent)
 
             toast.show()
         }
 
-        val marquesina: Button = findViewById(R.id.marquesina)
-        marquesina.setOnClickListener {
+        val andesC: Button = findViewById(R.id.andesC)
+        andesC.setOnClickListener {
+            val intent: Intent = Intent(this, Home::class.java)
+            startActivity(intent)
+
+            toast.show()
+        }
+
+        val andesB: Button = findViewById(R.id.andesB)
+        andesB.setOnClickListener {
+            val intent: Intent = Intent(this, Home::class.java)
+            startActivity(intent)
+
+            toast.show()
+        }
+
+        val marquesinaA: Button = findViewById(R.id.marquesinaA)
+        marquesinaA.setOnClickListener {
+            val intent: Intent = Intent(this, Home::class.java)
+            startActivity(intent)
+
+            toast.show()
+        }
+
+        val marquesinaB: Button = findViewById(R.id.marquesinaB)
+        marquesinaB.setOnClickListener {
             val intent: Intent = Intent(this, Home::class.java)
             startActivity(intent)
 
@@ -69,6 +93,14 @@ class Home : AppCompatActivity() {
 
         val cerroB: Button = findViewById(R.id.cerroB)
         cerroB.setOnClickListener {
+            val intent: Intent = Intent(this, Home::class.java)
+            startActivity(intent)
+
+            toast.show()
+        }
+
+        val cerroC: Button = findViewById(R.id.cerroC)
+        cerroC.setOnClickListener {
             val intent: Intent = Intent(this, Home::class.java)
             startActivity(intent)
 
