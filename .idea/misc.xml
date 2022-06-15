@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/KJulo/StudioProjects/WATCApp/app/src/main/res/layout/activity_home_admin.xml" value="1.0" />
+        <entry key="..\:/Users/KJulo/StudioProjects/WATCApp/app/src/main/res/layout/activity_inicio_sesion_login.xml" value="0.45625" />
+        <entry key="..\:/Users/KJulo/StudioProjects/WATCApp/app/src/main/res/layout/activity_login_admin.xml" value="0.33" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/drawable-anydpi/ic_perfil.xml" value="0.1835" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/drawable/button_rounded.xml" value="0.2445" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/drawable/button_rounded_border.xml" value="0.2445" />
@@ -17,6 +20,7 @@
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/activity_inicio_sesion_login.xml" value="0.2" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/activity_inicio_watc.xml" value="0.264" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/activity_registro.xml" value="0.2" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/alerta_enviada.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/card_layout.xml" value="0.1188118811881188" />
         <entry key="..\:/Users/geral/AndroidStudioProjects/watc/app/src/main/res/layout/ddsa.xml" value="0.1" />
