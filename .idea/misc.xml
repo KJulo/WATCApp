@@ -28,6 +28,13 @@
         <entry key="..\:/proyecto/WATCApp/app/src/main/res/layout/activity_enviar_alerta.xml" value="0.14722222222222223" />
         <entry key="..\:/proyecto/WATCApp/app/src/main/res/layout/activity_home.xml" value="0.67" />
         <entry key="..\:/proyecto/WATCApp/app/src/main/res/layout/activity_main.xml" value="0.1693840579710145" />
+        <entry key="..\:/proyecto/WATCAppActualizado/WATCApp/app/src/main/res/drawable/button_rounded.xml" value="0.2905" />
+        <entry key="..\:/proyecto/WATCAppActualizado/WATCApp/app/src/main/res/drawable/button_rounded_border.xml" value="0.2905" />
+        <entry key="..\:/proyecto/WATCAppActualizado/WATCApp/app/src/main/res/drawable/circle.xml" value="0.2905" />
+        <entry key="..\:/proyecto/WATCAppActualizado/WATCApp/app/src/main/res/drawable/rounded_textview.xml" value="0.2905" />
+        <entry key="..\:/proyecto/WATCAppActualizado/WATCApp/app/src/main/res/layout/activity_home.xml" value="0.2246376811594203" />
+        <entry key="..\:/proyecto/WATCAppActualizado/WATCApp/app/src/main/res/layout/activity_home_admin.xml" value="0.25" />
+        <entry key="..\:/proyecto/WATCAppActualizado/WATCApp/app/src/main/res/layout/fragment_mapa.xml" value="0.33" />
       </map>
     </option>
   </component>
