@@ -1,29 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="deploymentTargetDropDown">
-<<<<<<< HEAD
     <runningDeviceTargetSelectedWithDropDown>
-=======
-    <runningDeviceTargetsSelectedWithDialog>
->>>>>>> feature/alert
       <Target>
         <type value="RUNNING_DEVICE_TARGET" />
         <deviceKey>
           <Key>
-            <type value="VIRTUAL_DEVICE_PATH" />
-<<<<<<< HEAD
-            <value value="C:\Users\KJulo\.android\avd\Pixel_5_API_32.avd" />
+            <type value="SERIAL_NUMBER" />
+            <value value="adb-11ac403-8sXSfz._adb-tls-connect._tcp" />
           </Key>
         </deviceKey>
       </Target>
     </runningDeviceTargetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2022-06-16T00:31:00.275855600Z" />
-=======
-            <value value="C:\Users\KJulo\.android\avd\Pixel_4_XL_API_32.avd" />
-          </Key>
-        </deviceKey>
-      </Target>
-    </runningDeviceTargetsSelectedWithDialog>
->>>>>>> feature/alert
+    <timeTargetWasSelectedWithDropDown value="2022-06-16T02:41:10.842231300Z" />
   </component>
 </project>

@@ -1,31 +1,37 @@
 package com.example.watc
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
-import android.view.View
 import android.widget.Toast
-import org.w3c.dom.Text
 
 class Home : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-
+        val bundle = intent.extras
+        val positionSelected = bundle?.getString("tipoAlerta")
         val toast = Toast.makeText(this, "Su ubicacion ha sido guardada", Toast.LENGTH_LONG)
         val btn: Button = findViewById(R.id.tengoProblema)
         btn.setOnClickListener {
-
-            val intent: Intent = Intent(this, Alertas::class.java)
-            startActivity(intent)
+            if (positionSelected.toString() != "null"){
+                val intent: Intent = Intent(this, Alertas::class.java)
+                startActivity(intent)
+            }else{
+                val toast = Toast.makeText(this, "Por favor, seleccione ubicación", Toast.LENGTH_LONG)
+                toast.show()
+            }
         }
 
         val lagunaA: Button = findViewById(R.id.lagunaA)
         lagunaA.setOnClickListener {
             val textlagunaA : String= "Laguna A"
             val intent: Intent = Intent(this, Home::class.java)
-            intent.putExtra("lagunaA",textlagunaA)
+            intent.putExtra("tipoAlerta",textlagunaA)
             startActivity(intent)
             toast.show()
 
@@ -35,7 +41,7 @@ class Home : AppCompatActivity() {
         lagunaB.setOnClickListener {
             val textlagunaB : String= "Laguna B"
             val intent: Intent = Intent(this, Home::class.java)
-            intent.putExtra("lagunaB",textlagunaB)
+            intent.putExtra("tipoAlerta",textlagunaB)
             startActivity(intent)
             toast.show()
         }
@@ -43,8 +49,9 @@ class Home : AppCompatActivity() {
         val lagunaC: Button = findViewById(R.id.lagunaC)
         lagunaC.setOnClickListener {
             val textlagunaC : String= "Laguna C"
+            val itemSelected = textlagunaC
             val intent: Intent = Intent(this, Home::class.java)
-            intent.putExtra("lagunaC",textlagunaC)
+            intent.putExtra("tipoAlerta",textlagunaC)
             startActivity(intent)
 
             toast.show()
@@ -54,7 +61,7 @@ class Home : AppCompatActivity() {
         andesA.setOnClickListener {
             val textandesA : String= "Andes A"
             val intent: Intent = Intent(this, Home::class.java)
-            intent.putExtra("andesA",textandesA)
+            intent.putExtra("tipoAlerta",textandesA)
             startActivity(intent)
             toast.show()
         }
@@ -63,7 +70,7 @@ class Home : AppCompatActivity() {
         andesC.setOnClickListener {
             val textandesC : String= "Andes C"
             val intent: Intent = Intent(this, Home::class.java)
-            intent.putExtra("andesC",textandesC)
+            intent.putExtra("tipoAlerta",textandesC)
             startActivity(intent)
             toast.show()
         }
@@ -72,7 +79,7 @@ class Home : AppCompatActivity() {
         andesB.setOnClickListener {
             val textandesB : String= "Andes B"
             val intent: Intent = Intent(this, Home::class.java)
-            intent.putExtra("andesB",textandesB)
+            intent.putExtra("tipoAlerta",textandesB)
             startActivity(intent)
 
             toast.show()
@@ -82,7 +89,7 @@ class Home : AppCompatActivity() {
         marquesinaA.setOnClickListener {
             val textmarquesinaA : String= "Marquesina A"
             val intent: Intent = Intent(this, Home::class.java)
-            intent.putExtra("marquesinaA",textmarquesinaA)
+            intent.putExtra("tipoAlerta",textmarquesinaA)
             startActivity(intent)
 
             toast.show()
@@ -92,7 +99,7 @@ class Home : AppCompatActivity() {
         marquesinaB.setOnClickListener {
             val textmarquesinaB : String= "Marquesina B"
             val intent: Intent = Intent(this, Home::class.java)
-            intent.putExtra("marquesinaB",textmarquesinaB)
+            intent.putExtra("tipoAlerta",textmarquesinaB)
             startActivity(intent)
 
             toast.show()
@@ -102,7 +109,7 @@ class Home : AppCompatActivity() {
         cerroA.setOnClickListener {
             val textcerroA : String= "Cerro A"
             val intent: Intent = Intent(this, Home::class.java)
-            intent.putExtra("cerroA",textcerroA)
+            intent.putExtra("tipoAlerta",textcerroA)
             startActivity(intent)
             toast.show()
         }
@@ -111,7 +118,7 @@ class Home : AppCompatActivity() {
         cerroB.setOnClickListener {
             val textcerroB : String= "Cerro B"
             val intent: Intent = Intent(this, Home::class.java)
-            intent.putExtra("cerroB",textcerroB)
+            intent.putExtra("tipoAlerta",textcerroB)
             startActivity(intent)
             toast.show()
         }
@@ -120,7 +127,7 @@ class Home : AppCompatActivity() {
         cerroC.setOnClickListener {
             val textcerroC : String= "Cerro C"
             val intent: Intent = Intent(this, Home::class.java)
-            intent.putExtra("cerroC",textcerroC)
+            intent.putExtra("tipoAlerta",textcerroC)
             startActivity(intent)
             toast.show()
         }

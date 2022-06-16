@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import android.text.Editable
+import android.widget.Toast
 import com.example.watc.entity.checkUser
 import com.example.watc.service.ApiInterface
 import retrofit2.Call
@@ -21,10 +22,8 @@ class InicioSesionAdmin : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login_admin)
-
         val Email =findViewById<EditText>(R.id.editTextTextPersonName2)
         val Password =findViewById<EditText>(R.id.editTextTextPassword2)
-
         val btn: Button = findViewById(R.id.volver)
         val btnLogin: Button = findViewById(R.id.login)
 
@@ -36,12 +35,6 @@ class InicioSesionAdmin : AppCompatActivity() {
             var textContrasena = contrasena.text
             checkAdmin(textEmail,textContrasena)
 
-  /*      btnLogin.setOnClickListener{
-            val intent: Intent = Intent(this, HomeAdmin:: class.java)
-            intent.putExtra("Email",Email.text.toString())
-            intent.putExtra("Contrasena",Password.text.toString())
-            startActivity(intent);*/
-
         }
 
         btn.setOnClickListener {
@@ -51,10 +44,11 @@ class InicioSesionAdmin : AppCompatActivity() {
 
 
     }
-    /*btnLogin.setOnClickListener{
-        val intent: Intent = Intent(this, HomeAdmin:: class.java)
-        startActivity(intent);
-    }*/
+
+    private fun showError(){
+        val toast = Toast.makeText(this, "Los datos ingresados no son correctos", Toast.LENGTH_LONG)
+        toast.show()
+    }
 
     private fun changeMainAdmin(){
         val intent: Intent = Intent(this, HomeAdmin:: class.java)
@@ -76,11 +70,13 @@ class InicioSesionAdmin : AppCompatActivity() {
                 myStringBuilder.append(responseBody.login.exists)
                 if (responseBody.login.exists == true){
                     changeMainAdmin()
+                }else{
+                    showError()
                 }
             }
 
             override fun onFailure(call: Call<checkUser?>, t: Throwable) {
-                TODO("Not yet implemented")
+                showError()
             }
         })
     }

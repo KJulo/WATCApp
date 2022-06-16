@@ -4,16 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-
-import android.widget.TextView
-import androidx.viewpager.widget.ViewPager
+import android.widget.Toast
 import com.example.watc.entity.checkUser
-import com.example.watc.entity.userResponse
 import com.example.watc.service.ApiInterface
-import com.google.android.material.tabs.TabLayout
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,30 +23,18 @@ class InicioSesionLogin : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_inicio_sesion_login)
-
-
         val Email =findViewById<EditText>(R.id.editTextTextPersonName)
         val Password =findViewById<EditText>(R.id.editTextTextPassword)
-
-
         val btn: Button = findViewById(R.id.login)
-
         val btnRegistrars: Button = findViewById(R.id.button2)
         val btnAdmin: Button = findViewById(R.id.button1)
 
         btn.setOnClickListener{
-
             val email: EditText = findViewById(R.id.editTextTextPersonName)
             val contrasena: EditText = findViewById(R.id.editTextTextPassword)
             var textEmail = email.text
             var textContrasena = contrasena.text
             checkUser(textEmail,textContrasena)
-
-            /*val intent: Intent = Intent(this, Home:: class.java)
-            intent.putExtra("Email",Email.text.toString())
-            intent.putExtra("Contrasena",Password.text.toString())
-            startActivity(intent)*/
-
         }
 
         btnRegistrars.setOnClickListener{
@@ -63,15 +46,16 @@ class InicioSesionLogin : AppCompatActivity() {
             val intent: Intent = Intent(this, InicioSesionAdmin:: class.java)
             startActivity(intent);
         }
-
-
-
     }
     private fun changeMain(){
         val intent: Intent = Intent(this, Home:: class.java)
         startActivity(intent)
     }
 
+    private fun showError(){
+        val toast = Toast.makeText(this, "Los datos ingresados no son correctos", Toast.LENGTH_LONG)
+        toast.show()
+    }
 
 
     private fun checkUser(textEmail: Editable, textContrasena: Editable) {
@@ -84,50 +68,18 @@ class InicioSesionLogin : AppCompatActivity() {
 
         retrofitData.enqueue(object : Callback<checkUser?> {
             override fun onResponse(call: Call<checkUser?>, response: Response<checkUser?>) {
-
                 val responseBody = response.body()!!
-
                 val myStringBuilder = StringBuilder()
-
                 myStringBuilder.append(responseBody.login.exists)
-
                 if (responseBody.login.exists == true){
                     changeMain()
+                }else{
+                    showError()
                 }
             }
-
             override fun onFailure(call: Call<checkUser?>, t: Throwable) {
-                Log.d("Home", "onFailure"+t.message)
+                showError()
             }
         })
     }
-
-    private fun getUser(){
-        val retrofitBuilder = Retrofit.Builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(BASE_URL)
-            .build()
-            .create(ApiInterface::class.java)
-
-        val retrofitData = retrofitBuilder.getUser()
-
-
-        retrofitData.enqueue(object : Callback<userResponse?> {
-            override fun onResponse(call: Call<userResponse?>, response: Response<userResponse?>) {
-
-                val responseBody = response.body()!!
-
-                val myStringBuilder = StringBuilder()
-
-                myStringBuilder.append(responseBody.data.nombre)
-            }
-
-            override fun onFailure(call: Call<userResponse?>, t: Throwable) {
-                Log.d("Home", "onFailure"+t.message)
-            }
-        })
-    }
-
-
-
 }

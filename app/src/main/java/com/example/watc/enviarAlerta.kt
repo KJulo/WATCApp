@@ -36,23 +36,50 @@ class enviarAlerta : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_enviar_alerta)
+
+
         cargarFoto.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED || checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
-                    val permission = arrayOf(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                if (checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED || checkSelfPermission(
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE
+                    ) == PackageManager.PERMISSION_DENIED
+                ) {
+                    val permission = arrayOf(
+                        Manifest.permission.CAMERA,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE
+                    )
                     requestPermissions(permission, PERMISSION_CODE)
-                }else {
+                } else {
                     openCamera()
                 }
-            }else{
+            } else {
                 openCamera()
             }
 
         }
         cargarGaleria.setOnClickListener {
-            ImgController.selectPhotofromGallery(this,SELECT_ACTIVITY)
+            ImgController.selectPhotofromGallery(this, SELECT_ACTIVITY)
+        }
+
+        enviar.setOnClickListener{
+            val textoAlerta = textAlerta.text
+            if (textoAlerta.toString() != "") {
+                val toast = Toast.makeText(this, "La alerta ha sido recibida, enviaremos un guardia al sector del problema.", Toast.LENGTH_LONG)
+                toast.show()
+                changeMain()
+            }else{
+                val toast = Toast.makeText(this, "La incidencia debe contener un mensaje.", Toast.LENGTH_LONG)
+                toast.show()
+            }
         }
     }
+
+    private fun changeMain(){
+        val intent: Intent =  Intent(this, Home::class.java)
+        startActivity(intent);
+    }
+
+
 
     private fun openCamera(){
         val values= ContentValues()

@@ -2,6 +2,7 @@ package com.example.watc.service
 
 
 import com.example.watc.entity.checkUser
+import com.example.watc.entity.register
 import com.example.watc.entity.userResponse
 import retrofit2.http.GET
 import retrofit2.Call
@@ -21,6 +22,6 @@ interface ApiInterface {
     fun checkAdmin(@Query("email")email: String, @Query("contrasena")contrasena: String):Call<checkUser>
 
     @POST("/addUsuario")
-    fun addUser(@Query("email")email: String, @Query("contrasena")contrasena: String, @Query("nombre")nombre:String):Call<checkUser>
+    fun addUser(@Query("nombre")nombre:String,@Query("email")email: String, @Query("contrasena")contrasena: String):Call<register>
 }
 data class UserDto(val email:String, val contrasena: String)
