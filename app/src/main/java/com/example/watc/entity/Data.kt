@@ -1,0 +1,8 @@
+package com.example.watc.entity
+
+data class Data(
+    val contrasena: String,
+    val email: String,
+    val id_usuario: Int,
+    val nombre: String
+)

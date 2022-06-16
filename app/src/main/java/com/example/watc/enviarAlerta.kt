@@ -91,42 +91,5 @@ class enviarAlerta : AppCompatActivity() {
             imageUri=data!!.data
             imageSelect_iv.setImageURI(imageUri)
         }
-
     }
-/*
-        val bundle= intent.extras
-        val tipoAlerta = bundle?.getString("tipoAlerta")
-
-
-
-          val btn: Button = findViewById(R.id.enviar)
-          btn.setOnClickListener {
-              val intent: Intent = Intent(this, Home::class.java)
-
-              val texDescripcion= findViewById<TextView>(R.id.textAlerta)
-              intent.putExtra("Descripcion",texDescripcion.text.toString())
-              startActivity(intent)
-
-
-              val toast = Toast.makeText(this, "La alerta ha sido recibida, enviaremos un guardia al sector del problema", Toast.LENGTH_LONG)
-              toast.show()
-
-          }
-
-       val enviar: Button = findViewById(R.id.enviar)
-        enviar.setOnClickListener{
-            val builder = AlertDialog.Builder(this@enviarAlerta)
-            val view = layoutInflater.inflate(R.layout.alerta_enviada, null)
-            builder.setView(view)
-
-            val enviada= builder.create()
-            enviada.show()
-
-
-            view.setOnClickListener {
-                val intent: Intent = Intent(this, Home::class.java)
-                startActivity(intent)
-            }
-        }
-
-*/ }
+}
