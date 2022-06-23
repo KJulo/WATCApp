@@ -1,4 +1,4 @@
-package com.example.watc
+package com.example.watc.ui.fragments
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

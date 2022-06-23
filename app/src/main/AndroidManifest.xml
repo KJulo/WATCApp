@@ -18,28 +18,28 @@
 
 
         <activity
-            android:name=".Registro"
+            android:name=".ui.Registro"
             android:exported="false" />
         <activity
-            android:name=".enviarAlerta"
+            android:name=".ui.enviarAlerta"
             android:exported="false" />
         <activity
-            android:name=".InicioSesionLogin"
+            android:name=".ui.InicioSesionLogin"
             android:exported="false" />
         <activity
-            android:name=".Alertas"
+            android:name=".ui.Alertas"
             android:exported="false" />
         <activity
-            android:name=".Home"
+            android:name=".ui.Home"
             android:exported="false" />
         <activity
-            android:name=".HomeAdmin"
+            android:name=".ui.HomeAdmin"
             android:exported="false" />
         <activity
-            android:name=".InicioSesionAdmin"
+            android:name=".ui.InicioSesionAdmin"
             android:exported="false" />
         <activity
-            android:name=".InicioSesion"
+            android:name=".ui.InicioSesion"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

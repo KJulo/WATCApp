@@ -1,18 +1,19 @@
-package com.example.watc
+package com.example.watc.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
+import com.example.watc.R
 
 class Alertas : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alertas)
         val btn: Button = findViewById(R.id.button_second)
-
+        val bundle = intent.extras
+        val position = bundle?.getString("position");
         btn.setOnClickListener {
             val intent: Intent = Intent(this, Home::class.java)
             startActivity(intent)
@@ -23,6 +24,7 @@ class Alertas : AppCompatActivity() {
             val intent: Intent = Intent(this, enviarAlerta::class.java)
             val texViolenciaFisica = findViewById<TextView>(R.id.pelea)
             intent.putExtra("tipoAlerta",texViolenciaFisica.text.toString())
+            intent.putExtra("position",position.toString())
             startActivity(intent)
         }
 
@@ -31,7 +33,7 @@ class Alertas : AppCompatActivity() {
             val intent: Intent = Intent(this, enviarAlerta::class.java)
             val texGenero = findViewById<TextView>(R.id.genero)
             intent.putExtra("tipoAlerta",texGenero.text.toString())
-
+            intent.putExtra("position",position.toString())
             startActivity(intent)
         }
 
@@ -40,6 +42,7 @@ class Alertas : AppCompatActivity() {
             val intent: Intent = Intent(this, enviarAlerta::class.java)
             val texGenero = findViewById<TextView>(R.id.textView2)
             intent.putExtra("tipoAlerta",texGenero.text.toString())
+            intent.putExtra("position",position.toString())
 
             startActivity(intent)
         }
@@ -49,6 +52,7 @@ class Alertas : AppCompatActivity() {
             val intent: Intent = Intent(this, enviarAlerta::class.java)
             val texGenero = findViewById<TextView>(R.id.textView3)
             intent.putExtra("tipoAlerta",texGenero.text.toString())
+            intent.putExtra("position",position.toString())
             startActivity(intent)
         }
 
@@ -57,6 +61,7 @@ class Alertas : AppCompatActivity() {
             val intent: Intent = Intent(this, enviarAlerta::class.java)
             val texGenero = findViewById<TextView>(R.id.textView4)
             intent.putExtra("tipoAlerta",texGenero.text.toString())
+            intent.putExtra("position",position.toString())
             startActivity(intent)
         }
 

@@ -1,4 +1,4 @@
-package com.example.watc.entity
+package com.example.watc.models
 
 data class register(
     val register: String

@@ -1,27 +1,28 @@
-package com.example.watc
+package com.example.watc.ui
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
 import android.os.Build
 import android.Manifest
-import android.annotation.SuppressLint
-import android.content.ContentResolver
 import android.content.ContentValues
 import android.content.pm.PackageManager
-import android.os.Environment
 import android.provider.MediaStore
-import android.widget.Button
-import android.widget.TextView
+import android.text.Editable
+import android.util.Log
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_enviar_alerta.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.FileProvider
-
-import java.io.File
+import com.example.watc.R
+import com.example.watc.models.*
+import com.example.watc.service.ApiInterface
+import com.example.watc.ui.controller.ImgController
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 private const val SELECT_ACTIVITY =1
 private const val PERMISSION_CODE= 2
@@ -29,14 +30,20 @@ private const val IMAGE_CAPTURE_CODE= 3
 
 
 class enviarAlerta : AppCompatActivity() {
-
+    var BASE_URL="http://137.184.56.156/"
     private var imageUri: Uri? = null
     private var imageUri2: Uri? = null
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        val tipoAlerta = intent.getStringExtra("tipoAlerta").toString()
+        Log.d("ENVIARALERTA",tipoAlerta)
+        val position = intent.getStringExtra("position").toString()
+        Log.d("ENVIARALERTA", position)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_enviar_alerta)
-
+        val user: user = user(email = "", ido = 1,"Ignacio Silva")
 
         cargarFoto.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -62,16 +69,47 @@ class enviarAlerta : AppCompatActivity() {
         }
 
         enviar.setOnClickListener{
-            val textoAlerta = textAlerta.text
+            val textoAlerta = textAlerta.text.toString()
             if (textoAlerta.toString() != "") {
                 val toast = Toast.makeText(this, "La alerta ha sido recibida, enviaremos un guardia al sector del problema.", Toast.LENGTH_LONG)
                 toast.show()
-                changeMain()
+                addIncidencia(user,tipoAlerta,position, textoAlerta)
             }else{
                 val toast = Toast.makeText(this, "La incidencia debe contener un mensaje.", Toast.LENGTH_LONG)
                 toast.show()
             }
         }
+    }
+
+    private fun showError(){
+        val toast = Toast.makeText(this, "Hubo un error al enviar la incidencia, intentelo mas tarde.", Toast.LENGTH_LONG)
+        toast.show()
+    }
+
+    private fun addIncidencia(user: user, tipoAlerta: String, position: String, description: String ){
+        var incidencia: Incidencia = Incidencia(description,"1",tipoAlerta,position)
+        var body : bodyIncidencia = bodyIncidencia(incidencia,user)
+        val retrofitBuilder = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL)
+            .build()
+            .create(ApiInterface::class.java)
+        val retrofitData = retrofitBuilder.addIncidencia(body)
+
+        retrofitData.enqueue(object : Callback<checkUser?> {
+            override fun onResponse(call: Call<checkUser?>, response: Response<checkUser?>) {
+                val responseBody = response.body()!!
+                val myStringBuilder = StringBuilder()
+                myStringBuilder.append(responseBody.login.exists)
+                if (responseBody.login.exists == true){
+                    changeMain();
+                }
+            }
+
+            override fun onFailure(call: Call<checkUser?>, t: Throwable) {
+                showError()
+            }
+        })
     }
 
     private fun changeMain(){

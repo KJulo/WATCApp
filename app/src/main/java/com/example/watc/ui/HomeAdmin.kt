@@ -1,13 +1,13 @@
-package com.example.watc
+package com.example.watc.ui
 
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
-import com.github.aachartmodel.aainfographics.aachartcreator.AAChartModel
-import com.github.aachartmodel.aainfographics.aachartcreator.AAChartType
-import com.github.aachartmodel.aainfographics.aachartcreator.AAChartView
-import com.github.aachartmodel.aainfographics.aachartcreator.AASeriesElement
+import com.example.watc.R
+import com.example.watc.ui.fragments.FragmentAdapter
+import com.example.watc.ui.fragments.IncidenciasFragment
+import com.example.watc.ui.fragments.MapaFragment
 import com.google.android.material.tabs.TabLayout
 
 class HomeAdmin : AppCompatActivity() {
@@ -20,7 +20,6 @@ class HomeAdmin : AppCompatActivity() {
 
         val fragmentAdapter = FragmentAdapter(supportFragmentManager)
         fragmentAdapter.addFragment(MapaFragment(),"Mapa")
-        //fragmentAdapter.addFragment(GraficoFragment(),"Grafico")
         fragmentAdapter.addFragment(IncidenciasFragment(),"Incidencias")
 
         viewPager.adapter = fragmentAdapter

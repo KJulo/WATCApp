@@ -1,10 +1,11 @@
-package com.example.watc
+package com.example.watc.ui.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.watc.R
 
 class IncidenciasFragment : Fragment() {
 
@@ -17,8 +18,8 @@ class IncidenciasFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_incidencias, container, false)
+        val view = inflater.inflate(R.layout.fragment_incidencias, container, false)
+        return view
     }
 
 }

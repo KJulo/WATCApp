@@ -1,14 +1,13 @@
-package com.example.watc
+package com.example.watc.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.watc.entity.checkUser
-import com.example.watc.entity.register
+import com.example.watc.R
+import com.example.watc.models.register
 import com.example.watc.service.ApiInterface
 import retrofit2.Call
 import retrofit2.Callback

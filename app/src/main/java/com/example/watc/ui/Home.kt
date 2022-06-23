@@ -1,12 +1,11 @@
-package com.example.watc
+package com.example.watc.ui
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.Toast
+import com.example.watc.R
 
 class Home : AppCompatActivity() {
 
@@ -15,11 +14,13 @@ class Home : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         val bundle = intent.extras
         val positionSelected = bundle?.getString("tipoAlerta")
+        val user = bundle?.getString("Usuario")
         val toast = Toast.makeText(this, "Su ubicacion ha sido guardada", Toast.LENGTH_LONG)
         val btn: Button = findViewById(R.id.tengoProblema)
         btn.setOnClickListener {
             if (positionSelected.toString() != "null"){
                 val intent: Intent = Intent(this, Alertas::class.java)
+                intent.putExtra("position",positionSelected)
                 startActivity(intent)
             }else{
                 val toast = Toast.makeText(this, "Por favor, seleccione ubicación", Toast.LENGTH_LONG)

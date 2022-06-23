@@ -1,4 +1,4 @@
-package com.example.watc
+package com.example.watc.ui.controller
 
 import android.app.Activity
 import android.content.Intent
