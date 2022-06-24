@@ -19,13 +19,13 @@ class HomeAdmin : AppCompatActivity() {
         var tabLayout:TabLayout = findViewById(R.id.tablayout) as TabLayout
 
         val fragmentAdapter = FragmentAdapter(supportFragmentManager)
+
         fragmentAdapter.addFragment(MapaFragment(),"Mapa")
         fragmentAdapter.addFragment(IncidenciasFragment(),"Incidencias")
 
         viewPager.adapter = fragmentAdapter
         tabLayout.setupWithViewPager(viewPager)
-
-
     }
+
 
 }

@@ -1,10 +1,7 @@
 package com.example.watc.service
 
 
-import com.example.watc.models.bodyIncidencia
-import com.example.watc.models.checkUser
-import com.example.watc.models.register
-import com.example.watc.models.userResponse
+import com.example.watc.models.*
 import retrofit2.http.GET
 import retrofit2.Call
 import retrofit2.http.Body
@@ -28,5 +25,7 @@ interface ApiInterface {
     @POST("/addIncidencia")
     fun addIncidencia(@Body incidencia:bodyIncidencia):Call<checkUser>
 
+    @GET("/getIncidencias")
+    fun getIncidencias():Call<ubicaciones>
 }
 data class UserDto(val email:String, val contrasena: String)

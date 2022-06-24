@@ -132,8 +132,5 @@ class Home : AppCompatActivity() {
             startActivity(intent)
             toast.show()
         }
-
-
-
     }
 }

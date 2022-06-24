@@ -3,6 +3,7 @@ package com.example.watc.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -20,15 +21,13 @@ class Registro : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro)
-
-        val Nombre =findViewById<EditText>(R.id.registrarNombre).text.toString()
-        val Correo =findViewById<EditText>(R.id.registrarCorreo).text.toString()
-        val Password =findViewById<EditText>(R.id.registrarContraseña).text.toString()
-
         val btnRegistrase: Button = findViewById(R.id.btnRegistrarse)
         val btn: Button = findViewById(R.id.btnVolver)
 
         btnRegistrase.setOnClickListener{
+            val Nombre =findViewById<EditText>(R.id.registrarNombre).text.toString()
+            val Correo =findViewById<EditText>(R.id.registrarCorreo).text.toString()
+            val Password =findViewById<EditText>(R.id.registrarContraseña).text.toString()
             if (Nombre != "" && Correo != "" && Password != ""){
                 addUser(Nombre,Correo,Password);
             }
@@ -63,7 +62,8 @@ class Registro : AppCompatActivity() {
         retrofitData.enqueue(object : Callback<register?> {
             override fun onResponse(call: Call<register?>, response: Response<register?>) {
                 val responseBody = response.body()!!
-                if (responseBody.register.toString() == "Usuario creado exitosamente"){
+                Log.d("Registro", responseBody.toString())
+                if (responseBody.register == "Usuario creado exitosamente"){
                     changeMain()
                 }else{
                     showError()
