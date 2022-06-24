@@ -51,7 +51,7 @@ class MapaFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val root: View = inflater.inflate(R.layout.fragment_mapa, container, false)
+        val root: View = inflater.inflate(R.layout.activity_incidencia_mapa, container, false)
         Log.d("ACA",ubicaciones.toString())
         for (item in ubicaciones) {
             when (item.ubicacion) {
@@ -77,7 +77,7 @@ class MapaFragment : Fragment() {
             }
 
         }
-        return inflater.inflate(R.layout.fragment_mapa, container, false)
+        return inflater.inflate(R.layout.activity_incidencia_mapa, container, false)
     }
 
 
