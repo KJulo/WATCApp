@@ -1,8 +1,10 @@
 package com.example.watc.ui
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
@@ -25,17 +27,11 @@ class HomeAdmin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_incidencia_mapa)
         fetchIncidencias()
-
-//        var viewPager:ViewPager = findViewById(R.id.viewPager) as ViewPager
-//        var tabLayout:TabLayout = findViewById(R.id.tablayout) as TabLayout
-//
-//        val fragmentAdapter = FragmentAdapter(supportFragmentManager)
-//
-//        fragmentAdapter.addFragment(MapaFragment(),"Mapa")
-//        fragmentAdapter.addFragment(IncidenciasFragment(),"Incidencias")
-//
-//        viewPager.adapter = fragmentAdapter
-//        tabLayout.setupWithViewPager(viewPager)
+        val buttonIncidencias : Button = findViewById(R.id.incidencias)
+        buttonIncidencias.setOnClickListener{
+            val intent : Intent = Intent(this, IncidenciaRecycleView::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun fetchIncidencias() {

@@ -39,6 +39,10 @@
             android:name=".ui.InicioSesionAdmin"
             android:exported="false" />
         <activity
+            android:name=".ui.IncidenciaRecycleView"
+            android:exported="false" />
+
+        <activity
             android:name=".ui.InicioSesion"
             android:exported="true">
             <intent-filter>

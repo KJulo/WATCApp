@@ -27,5 +27,11 @@ interface ApiInterface {
 
     @GET("/getIncidencias")
     fun getIncidencias():Call<ubicaciones>
+
+    @GET("/getIncidenciasList")
+    fun getIncidenciasList():Call<IncidenciasList>
+
+    @GET("/getIncidenciasListHours")
+    fun getIncidenciasListHours():Call<IncidenciasList>
 }
 data class UserDto(val email:String, val contrasena: String)

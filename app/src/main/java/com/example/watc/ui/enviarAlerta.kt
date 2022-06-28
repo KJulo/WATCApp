@@ -11,6 +11,7 @@ import android.content.pm.PackageManager
 import android.provider.MediaStore
 import android.text.Editable
 import android.util.Log
+import android.widget.Button
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_enviar_alerta.*
 import androidx.appcompat.app.AppCompatActivity
@@ -68,11 +69,11 @@ class enviarAlerta : AppCompatActivity() {
             ImgController.selectPhotofromGallery(this, SELECT_ACTIVITY)
         }
 
-        enviar.setOnClickListener{
+
+        val enviarAlertaButton : Button = findViewById(R.id.enviar)
+        enviarAlertaButton.setOnClickListener{
             val textoAlerta = textAlerta.text.toString()
-            if (textoAlerta.toString() != "") {
-                val toast = Toast.makeText(this, "La alerta ha sido recibida, enviaremos un guardia al sector del problema.", Toast.LENGTH_LONG)
-                toast.show()
+            if (textoAlerta != "") {
                 addIncidencia(user,tipoAlerta,position, textoAlerta)
             }else{
                 val toast = Toast.makeText(this, "La incidencia debe contener un mensaje.", Toast.LENGTH_LONG)
@@ -99,11 +100,8 @@ class enviarAlerta : AppCompatActivity() {
         retrofitData.enqueue(object : Callback<checkUser?> {
             override fun onResponse(call: Call<checkUser?>, response: Response<checkUser?>) {
                 val responseBody = response.body()!!
-                val myStringBuilder = StringBuilder()
-                myStringBuilder.append(responseBody.login.exists)
-                if (responseBody.login.exists == true){
-                    changeMain();
-                }
+                Log.d("enviarAlerta", responseBody.toString())
+                changeMain();
             }
 
             override fun onFailure(call: Call<checkUser?>, t: Throwable) {
@@ -113,6 +111,8 @@ class enviarAlerta : AppCompatActivity() {
     }
 
     private fun changeMain(){
+        val toast = Toast.makeText(this, "La alerta ha sido recibida, enviaremos un guardia al sector del problema.", Toast.LENGTH_LONG)
+        toast.show()
         val intent: Intent =  Intent(this, Home::class.java)
         startActivity(intent);
     }
