@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.watc.R
 import com.example.watc.models.IncidenciasList
 import java.text.SimpleDateFormat
-import java.time.ZonedDateTime
-import java.time.format.DateTimeFormatter
+import java.time.LocalDate
+import java.time.OffsetDateTime
 import java.util.*
 
 class IncidenciasAdapter (val context: Context, val incidencias: IncidenciasList) :
@@ -28,10 +28,11 @@ class IncidenciasAdapter (val context: Context, val incidencias: IncidenciasList
         val incidencia = incidencias[position]
         holder.incidenciaTipo.text = "Tipo de la incidencia: "+incidencia.tipo
         holder.incidenciaDescripcion.text = "Descripción de la incidencia: "+incidencia.descripcion
-        val gmt = TimeZone.getTimeZone("GMT+4")
-        "2022-06-28 05:03:36.5505+00"
-        val sourceFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-        holder.incidenciaFecha.text = "Fecha de la incidencia: "+incidencia.fechaemitida
+        val sdf = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.getDefault())
+        sdf.timeZone = TimeZone.getTimeZone("GMT4")
+        var consultationDate = sdf.parse(incidencia.fechaemitida)
+        holder.incidenciaFecha.text = "Fecha de la incidencia: "+consultationDate.toString().replace("GMT-04:00 2022","")
+        holder.incidenciaUbicacion.text = "Zona: "+incidencia.ubicacion
         if (incidencia.isresuelta){
             holder.incidenciaEstado.text = "La incidencia ha sido resuelta."
         }else{

@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.example.watc.R
+import com.example.watc.adapters.ExcelAdapter
 import com.example.watc.models.ubicaciones
 import com.example.watc.service.ApiInterface
 import com.example.watc.ui.fragments.FragmentAdapter
@@ -31,6 +32,10 @@ class HomeAdmin : AppCompatActivity() {
         buttonIncidencias.setOnClickListener{
             val intent : Intent = Intent(this, ListaIncidencias::class.java)
             startActivity(intent)
+        }
+        val exportarIncidencias : Button = findViewById(R.id.exportarExcel)
+        exportarIncidencias.setOnClickListener{
+            ExcelAdapter().crearExcel()
         }
     }
 

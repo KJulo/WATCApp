@@ -1,8 +1,10 @@
 package com.example.watc.ui
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.watc.R
@@ -25,6 +27,11 @@ class ListaIncidencias: AppCompatActivity() {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_incidencias)
         fetchIncidenciasListHours();
+        val buttonMap : Button = findViewById(R.id.mapa)
+        buttonMap.setOnClickListener{
+            val intent : Intent = Intent(this, HomeAdmin::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun fetchIncidenciasListHours(){
@@ -44,7 +51,6 @@ class ListaIncidencias: AppCompatActivity() {
                 adapter = IncidenciasAdapter(this@ListaIncidencias, responseBody)
                 listaIncidencias.adapter = adapter
                 listaIncidencias.layoutManager = LinearLayoutManager(this@ListaIncidencias)
-
             }
 
             override fun onFailure(call: Call<IncidenciasList?>, t: Throwable) {
