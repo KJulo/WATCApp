@@ -39,8 +39,11 @@
             android:name=".ui.InicioSesionAdmin"
             android:exported="false" />
         <activity
-            android:name=".ui.IncidenciaRecycleView"
+            android:name=".ui.ListaIncidencias"
             android:exported="false" />
+
+        <activity android:name=".ui.CalificacionAlerta"
+            android:exported="false"/>
 
         <activity
             android:name=".ui.InicioSesion"

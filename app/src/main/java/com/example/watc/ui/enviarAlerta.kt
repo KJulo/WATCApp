@@ -6,10 +6,10 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Build
 import android.Manifest
+import android.app.Dialog
 import android.content.ContentValues
 import android.content.pm.PackageManager
 import android.provider.MediaStore
-import android.text.Editable
 import android.util.Log
 import android.widget.Button
 import android.widget.Toast
@@ -113,8 +113,10 @@ class enviarAlerta : AppCompatActivity() {
     private fun changeMain(){
         val toast = Toast.makeText(this, "La alerta ha sido recibida, enviaremos un guardia al sector del problema.", Toast.LENGTH_LONG)
         toast.show()
-        val intent: Intent =  Intent(this, Home::class.java)
-        startActivity(intent);
+        var dialog = CalificacionAlerta()
+        dialog.show(supportFragmentManager,"CalificacionAlerta")
+        //val intent: Intent =  Intent(this, CalificacionAlerta::class.java)
+        //startActivity(intent);
     }
 
 

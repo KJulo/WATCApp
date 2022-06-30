@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="20dp"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        card_view:cardBackgroundColor="@color/white"
+        card_view:cardCornerRadius="24dp"
+        >
+
+
+        <TextView
+            android:id="@+id/tipoIncidencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:text="Tipo:"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/descripcionIncidencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="20dp"
+            android:text="Descripcion"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/fechaEmitidaIncidencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="20dp"
+            android:text="Fecha: "
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/ubicacionIncidencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginStart="20dp"
+            android:text="Ubicación"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/estadoResueltoIncidencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="solved?"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="20dp" />
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

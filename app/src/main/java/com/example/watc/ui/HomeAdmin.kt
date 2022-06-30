@@ -29,7 +29,7 @@ class HomeAdmin : AppCompatActivity() {
         fetchIncidencias()
         val buttonIncidencias : Button = findViewById(R.id.incidencias)
         buttonIncidencias.setOnClickListener{
-            val intent : Intent = Intent(this, IncidenciaRecycleView::class.java)
+            val intent : Intent = Intent(this, ListaIncidencias::class.java)
             startActivity(intent)
         }
     }
