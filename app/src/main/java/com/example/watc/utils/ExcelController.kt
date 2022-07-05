@@ -1,5 +1,6 @@
 package com.example.watc.adapters
 
+/*
 import android.util.Log
 import com.example.watc.models.IncidenciasList
 import com.example.watc.ui.ListaIncidencias
@@ -9,9 +10,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
 import java.io.IOException
+*/
 
 class ExcelAdapter () {
-    //incidencias: IncidenciasList
+    /*incidencias: IncidenciasList
     public fun crearExcel(){
         val wb = XSSFWorkbook()
         val sheet = wb.createSheet("Incidencias")
@@ -39,7 +41,9 @@ class ExcelAdapter () {
         }catch(e: IOException){
             Log.e("Excel","No se pudo guardar archivo")
         }
+
     }
+     */
 
 
 }

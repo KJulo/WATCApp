@@ -45,7 +45,6 @@ class IncidenciasAdapter (val context: Context, val incidencias: IncidenciasList
     }
 
     class IncidenciasViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-
         var incidenciaTipo = itemView.findViewById<TextView>(R.id.tipoIncidencia)
         var incidenciaDescripcion = itemView.findViewById<TextView>(R.id.descripcionIncidencia)
         var incidenciaFecha = itemView.findViewById<TextView>(R.id.fechaEmitidaIncidencia)

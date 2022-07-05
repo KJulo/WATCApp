@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.example.watc.R
@@ -35,7 +36,8 @@ class HomeAdmin : AppCompatActivity() {
         }
         val exportarIncidencias : Button = findViewById(R.id.exportarExcel)
         exportarIncidencias.setOnClickListener{
-            ExcelAdapter().crearExcel()
+            val toast = Toast.makeText(this, "De momento, esta funcionalidad no esta implementada", Toast.LENGTH_LONG)
+            toast.show()
         }
     }
 
@@ -46,7 +48,6 @@ class HomeAdmin : AppCompatActivity() {
             .build()
             .create(ApiInterface::class.java)
         val retrofitData = retrofitBuider.getIncidencias()
-
         retrofitData.enqueue(object : Callback<ubicaciones?> {
             override fun onResponse(call: Call<ubicaciones?>, response: Response<ubicaciones?>) {
                 val responseBody = response.body()!!
@@ -54,7 +55,7 @@ class HomeAdmin : AppCompatActivity() {
                     when (item.ubicacion) {
                         "Laguna A" -> {
                             val txtView: TextView = findViewById(R.id.lagunaA)
-
+                            txtView.text = item.count
                         }
                         "Laguna B" -> {
                             val txtView: TextView = findViewById(R.id.lagunaB)
